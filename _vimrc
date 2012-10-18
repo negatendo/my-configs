@@ -1,5 +1,3 @@
-" Brett O'Connor's .vimrc
-
 " Use Vim settings rather than Vi settings
 set nocompatible
 
@@ -72,8 +70,8 @@ map <F1> :bp<CR>
 map <F2> :bn<CR>
 " map F3 to list buffers
 map <F3> :ls
-" map F12 to load project
-map <F12> :NERDTree ~/Dropbox/Codebase/unicorn/<CR>
+" map F12 to load project in NERDTree
+map <F12> :NERDTree ~/projects/unicorn/<CR>
 
 """ OTHER
 
