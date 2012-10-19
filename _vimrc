@@ -7,12 +7,9 @@ set nocompatible
 " without writing to disk
 set hidden
 
-" allow buffers to be put to background
-" without writing to disk
-set hidden
-
 " autoindent rulez
 set autoindent
+
 " indents when it recognizes code blocks
 set smartindent
 
@@ -56,9 +53,6 @@ set scrolloff=3
 " make searches case-insensitive, unless they contain upper-case letters:
 set ignorecase
 set smartcase
-
-" don't highlight searched on terms (temp re-enable with set hls)
-set nohls
 
 " show the `best match so far' as search strings are typed:
 set incsearch
