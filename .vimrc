@@ -13,7 +13,7 @@ set autoindent
 " indents when it recognizes code blocks
 set smartindent
 
-" soft tabs (spaced tabs) at 4 spaces
+" soft tabs (spaced tabs) at 2 spaces
 set expandtab
 set tabstop=2
 set shiftwidth=2
