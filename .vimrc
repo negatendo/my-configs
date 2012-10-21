@@ -1,5 +1,11 @@
+""" VIM BEHAVIOR
+
 " Use Vim settings rather than Vi settings
 set nocompatible
+
+" default unix utf-8
+set fileformat="unix"
+set fileencoding="utf-8"
 
 """ EDITING
 
@@ -13,25 +19,28 @@ set autoindent
 " indents when it recognizes code blocks
 set smartindent
 
-" soft tabs (spaced tabs) at 2 spaces
-set expandtab
+" automaticaly wrap at 79 characters
+set textwidth=79
+set formatoptions=cto "auto wrap comments and lines using textwidth
+
+" soft tab default is 2 spaces
 set tabstop=2
 set shiftwidth=2
 
-" show matching braces when selected
+" detect set python and c files and set tabs to 4 spaces as per spec
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*pyw set tabstop=4
+
+" smarter backsapce behavior
+set backspace=indent,eol,start
+
+" use the appropriate number of spaces to insert a tab
+set expandtab
+
+" show matching braces when selected (nice for php)
 set showmatch
 
-" fix backspace behavior
-set backspace=2
-
-""" LOOK AND FEEL
-
-" gvim settings
-if has("gui_running")
-  set guioptions-=T " hide toolbar
-endif
-
-" show the cursor position in the bottom right
+" show the line and cursor position in the bottom right
 set ruler 
 
 " set background to light
@@ -58,6 +67,7 @@ set smartcase
 set incsearch
 
 """ KEYBOARD MAPPINGS
+
 " map F1 to open previous buffer
 map <F1> :bp<CR>
 " map F2 to open next buffer
@@ -69,7 +79,7 @@ map <F12> :NERDTree ~/projects/unicorn/<CR>
 
 """ OTHER
 
-" let mouse clicks move the cursor anywhere
+" let mouse clicks move the cursor anywhere (gvim)
 set virtualedit=all
 
 " no backup files. I hate those.
@@ -81,7 +91,3 @@ set history=1000
 " imporoves file and command completion when 
 " tab is pressed
 set wildmode=list:longest
-
-" turn on autocompletion with CTL-X CTL-O in insert mode
-set ofu=syntaxcomplete#Complete
-
