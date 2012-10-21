@@ -74,8 +74,6 @@ map <F1> :bp<CR>
 map <F2> :bn<CR>
 " map F3 to list buffers
 map <F3> :ls
-" map F12 to load project in NERDTree
-map <F12> :NERDTree ~/projects/unicorn/<CR>
 
 """ OTHER
 
