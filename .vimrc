@@ -40,10 +40,10 @@ set showmatch
 set ruler 
 
 " set background to dark
-set background=dark
+" set background=dark
 " NOTE on osx use terminal scheme instead
 " http://ethanschoonover.com/solarized
-colorscheme solarized
+" colorscheme solarized
 
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has("gui_running")
