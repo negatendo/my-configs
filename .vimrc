@@ -19,6 +19,10 @@ set autoindent
 " indents when it recognizes code blocks
 set smartindent
 
+" automaticaly wrap at 79 characters
+set textwidth=79
+set formatoptions=cto "auto wrap comments and lines using textwidth
+
 " soft tab default is 2 spaces
 set tabstop=2
 set shiftwidth=2
@@ -39,11 +43,8 @@ set showmatch
 " show the line and cursor position in the bottom right
 set ruler 
 
-" set background to dark
-" set background=dark
-" NOTE on osx use terminal scheme instead
-" http://ethanschoonover.com/solarized
-" colorscheme solarized
+" set background to light
+set background=light
 
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has("gui_running")
@@ -88,3 +89,6 @@ set history=1000
 " imporoves file and command completion when 
 " tab is pressed
 set wildmode=list:longest
+
+" automagically remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
