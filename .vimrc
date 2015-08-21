@@ -3,6 +3,12 @@
 " Use Vim settings rather than Vi settings
 set nocompatible
 
+" This shows what you are typing as a command.  I love this!
+set showcmd
+
+" Folding Stuffs
+set foldmethod=marker
+
 " default unix utf-8
 set fileformat="unix"
 set fileencoding="utf-8"
@@ -19,10 +25,6 @@ set autoindent
 " indents when it recognizes code blocks
 set smartindent
 
-" automaticaly wrap at 79 characters
-set textwidth=79
-set formatoptions=cto "auto wrap comments and lines using textwidth
-
 " soft tab default is 2 spaces
 set tabstop=2
 set shiftwidth=2
@@ -36,23 +38,21 @@ set backspace=indent,eol,start
 
 " use the appropriate number of spaces to insert a tab
 set expandtab
+set smarttab
+
+" show line numbers
+set number
 
 " show matching braces when selected (nice for php)
 set showmatch
 
 " show the line and cursor position in the bottom right
-set ruler 
+set ruler
 
-" set background to light
-set background=light
-
-" Switch syntax highlighting on, when the terminal has colors
-if &t_Co > 2 || has("gui_running")
-    syntax on
-endif
-
-" detect filetype
-filetype plugin on
+" syntax highlighting
+filetype on
+filetype plugin indent on
+syntax enable
 
 " maintain more lines around cursor when scrolling
 set scrolloff=3
@@ -66,15 +66,6 @@ set smartcase
 " show the `best match so far' as search strings are typed:
 set incsearch
 
-""" KEYBOARD MAPPINGS
-
-" map F1 to open previous buffer
-map <F1> :bp<CR>
-" map F2 to open next buffer
-map <F2> :bn<CR>
-" map F3 to list buffers
-map <F3> :ls
-
 """ OTHER
 
 " let mouse clicks move the cursor anywhere (gvim)
@@ -86,9 +77,12 @@ set nobackup
 " long history
 set history=1000
 
-" imporoves file and command completion when 
+" imporoves file and command completion when
 " tab is pressed
 set wildmode=list:longest
 
 " automagically remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" enable pathogen
+execute pathogen#infect()
