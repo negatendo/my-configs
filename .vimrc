@@ -86,3 +86,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " enable pathogen
 execute pathogen#infect()
+
+" map NERDTree to Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+
+" close vim if only open buffer is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
